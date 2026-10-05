@@ -1,0 +1,11 @@
+@use 'base';
+@use 'components/button';
+@use 'components/form';
+@use 'components/card';
+@use 'components/layout';
+@use 'components/slider';
+@use 'components/prose';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

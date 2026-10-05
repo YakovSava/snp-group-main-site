@@ -1,0 +1,46 @@
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-4 sm:px-6;
+  }
+
+  .skip-link {
+    @apply fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-brand px-4 py-2 font-semibold text-ink-900 transition-transform focus:translate-y-0;
+  }
+
+  .top-bar {
+    @apply border-b-[3px] border-brand bg-ink-900 text-xs text-white;
+  }
+
+  .nav-link {
+    @apply rounded-md px-3 py-2 text-sm font-medium text-ink-900 transition-colors hover:bg-brand-light;
+
+    &[aria-current='page'] {
+      @apply bg-brand;
+    }
+  }
+
+  .site-footer {
+    @apply bg-ink-900 text-sm text-white;
+
+    a {
+      @apply text-ink-300 transition-colors hover:text-brand;
+    }
+
+    &__heading {
+      @apply mb-3 text-sm font-semibold text-white;
+    }
+  }
+
+  .hero {
+    @apply relative isolate overflow-hidden bg-ink-900 text-white;
+
+    &__overlay {
+      @apply absolute inset-0 -z-10 bg-ink-900/70;
+    }
+  }
+
+  .status-dot {
+    @apply inline-block h-2.5 w-2.5 rounded-full bg-brand;
+    box-shadow: 0 0 0 3px rgba(254, 206, 58, 0.25);
+  }
+}

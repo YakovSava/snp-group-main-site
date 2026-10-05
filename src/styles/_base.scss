@@ -1,0 +1,43 @@
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-surface font-sans text-ink-900;
+    font-size: 0.9375rem;
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-extrabold tracking-tight;
+  }
+
+  img {
+    @apply h-auto max-w-full;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-ink-900;
+  }
+
+  ::selection {
+    @apply bg-brand text-ink-900;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}

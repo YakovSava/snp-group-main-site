@@ -1,0 +1,29 @@
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60;
+
+    &--primary {
+      @apply bg-brand text-ink-900 hover:bg-brand-dark;
+    }
+
+    &--outline {
+      @apply border border-brand bg-white text-ink-900 hover:bg-brand-light;
+    }
+
+    &--dark {
+      @apply bg-ink-900 text-white hover:bg-ink-700;
+    }
+
+    &--block {
+      @apply w-full;
+    }
+
+    &--small {
+      @apply px-3 py-2 text-xs;
+    }
+  }
+
+  .icon-button {
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-md bg-brand text-ink-900 transition-colors hover:bg-brand-dark;
+  }
+}

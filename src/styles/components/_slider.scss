@@ -1,0 +1,62 @@
+@layer components {
+  .promo-slider {
+    @apply relative overflow-hidden rounded-lg shadow-card;
+
+    &__track {
+      @apply flex transition-transform duration-500 ease-out;
+    }
+
+    &__slide {
+      @apply relative isolate flex min-h-[220px] w-full shrink-0 items-center overflow-hidden bg-ink-900 text-white md:min-h-[300px];
+    }
+
+    &__image {
+      @apply absolute inset-0 -z-10 h-full w-full object-cover;
+    }
+
+    &__shade {
+      @apply absolute inset-0 -z-10 bg-gradient-to-r from-ink-900/80 via-ink-900/40 to-transparent;
+    }
+
+    &__accent {
+      @apply inline-block bg-brand px-2 text-ink-900;
+    }
+
+    &__arrow {
+      @apply absolute top-1/2 z-10 inline-flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-md bg-white text-ink-900 shadow-card transition-colors hover:bg-brand;
+
+      &--prev {
+        @apply left-2;
+      }
+
+      &--next {
+        @apply right-2;
+      }
+    }
+
+    &__dots {
+      @apply absolute bottom-4 left-6 z-10 flex gap-2 md:left-10;
+    }
+
+    &__dot {
+      @apply h-1 w-10 rounded bg-white/40 transition-colors;
+
+      &[aria-current='true'] {
+        @apply bg-white;
+      }
+    }
+  }
+
+  .scroller {
+    @apply -mx-2 flex snap-x snap-mandatory gap-4 overflow-x-auto px-2 pb-6 pt-2;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    > * {
+      @apply w-[240px] shrink-0 snap-start sm:w-[260px];
+    }
+  }
+}

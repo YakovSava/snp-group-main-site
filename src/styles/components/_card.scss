@@ -1,0 +1,80 @@
+@layer components {
+  .card {
+    @apply rounded-lg bg-white shadow-card;
+
+    &--bordered {
+      @apply border border-ink-100;
+    }
+  }
+
+  .section-title {
+    @apply relative inline-block pb-2 text-lg font-extrabold uppercase text-ink-900 md:text-xl;
+
+    &::after {
+      content: '';
+      @apply absolute bottom-0 left-0 h-[3px] w-full rounded bg-brand;
+    }
+
+    &--center {
+      @apply block text-center;
+
+      &::after {
+        @apply left-1/2 w-40 -translate-x-1/2;
+      }
+    }
+  }
+
+  .perk-card {
+    @apply flex min-h-[148px] flex-col items-center justify-center gap-4 rounded-lg px-4 py-6 text-center text-sm font-bold uppercase tracking-wide text-ink-900 shadow-card transition-transform duration-200;
+    background: linear-gradient(135deg, theme('colors.brand.glow'), theme('colors.brand.DEFAULT'));
+
+    &:hover {
+      @apply -translate-y-1 shadow-lift;
+    }
+  }
+
+  .banner-card {
+    @apply relative flex min-h-[200px] overflow-hidden rounded-lg bg-white shadow-card transition-shadow duration-200 hover:shadow-lift;
+
+    &::after {
+      content: '';
+      @apply absolute inset-y-0 right-0 w-6 bg-brand;
+    }
+  }
+
+  .stat-card {
+    @apply flex min-h-[200px] flex-col justify-center rounded-lg bg-white px-6 py-8 shadow-card;
+
+    &__value {
+      @apply text-4xl font-extrabold leading-none md:text-[2.5rem];
+    }
+
+    &__label {
+      @apply mt-2 text-base font-extrabold leading-tight;
+    }
+
+    &__accent {
+      @apply text-brand-dark;
+    }
+  }
+
+  .product-tile {
+    @apply flex h-full flex-col rounded-md bg-white p-4 shadow-card transition-shadow duration-200 hover:shadow-lift;
+
+    &__sku {
+      @apply text-xs text-ink-500;
+    }
+
+    &__name {
+      @apply mt-1 text-sm font-medium leading-snug text-ink-900;
+    }
+
+    &__price {
+      @apply text-lg font-semibold;
+    }
+
+    &__old-price {
+      @apply text-xs text-ink-500 line-through;
+    }
+  }
+}
